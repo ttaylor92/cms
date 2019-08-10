@@ -30,11 +30,11 @@ export default class Button extends React.Component{
                                 <p>Amount of Users</p>
                             </div>
                             <div className="flex-2">
-                                <img className="bar-img" src="https://img.icons8.com/ios-filled/50/000000/bar-chart.png"/>
+                                <img className="bar-img" src="https://img.icons8.com/ios-filled/50/000000/bar-chart.png" alt="bar"/>
                             </div>
                         </div>
                         <div className="button-bottom" style={{ background: `${colours[0][1]}` }}>
-                            <p>More Info <img id="arr-img" src="https://img.icons8.com/material/24/000000/circled-right--v1.png"/></p>
+                            <p>More Info <img id="arr-img" src="https://img.icons8.com/material/24/000000/circled-right--v1.png" alt="arr"/></p>
                         </div>
                     </div>
                     )
@@ -44,14 +44,48 @@ export default class Button extends React.Component{
                             <div className="flex" style={{ background: `${colours[1][0]}` }}>
                                 <div className="flex-1">
                                     <h3>{number}</h3>
-                                    <p>Revenue generated</p>
+                                    <p>Revenue</p>
                                 </div>
                                 <div className="flex-2">
-                                    <img className="bar-img" src="https://img.icons8.com/ios-filled/50/000000/bar-chart.png"/>
+                                    <img className="dollars" src="https://img.icons8.com/material/50/000000/us-dollar.png" alt="dollars" />
                                 </div>
                             </div>
                             <div className="button-bottom" style={{ background: `${colours[1][1]}` }}>
-                                <p>More Info <img id="arr-img" src="https://img.icons8.com/material/24/000000/circled-right--v1.png"/></p>
+                                <p>More Info <img id="arr-img" src="https://img.icons8.com/material/24/000000/circled-right--v1.png" alt="arr"/></p>
+                            </div>
+                        </div>
+                        )
+            case 'InActive':
+                    return (
+                        <div className="button">
+                            <div className="flex" style={{ background: `${colours[2][0]}` }}>
+                                <div className="flex-1">
+                                    <h3>{number}</h3>
+                                    <p>In-Active Users</p>
+                                </div>
+                                <div className="flex-2">
+                                    <img className="user" src="https://img.icons8.com/material/50/000000/change-user-male.png" alt="contact"/>
+                                </div>
+                            </div>
+                            <div className="button-bottom" style={{ background: `${colours[2][1]}` }}>
+                                <p>More Info <img id="arr-img" src="https://img.icons8.com/material/24/000000/circled-right--v1.png" alt="arr"/></p>
+                            </div>
+                        </div>
+                        )
+            case 'Trips':
+                    return (
+                        <div className="button">
+                            <div className="flex" style={{ background: `${colours[3][0]}` }}>
+                                <div className="flex-1">
+                                    <h3>{number}</h3>
+                                    <p>Trips</p>
+                                </div>
+                                <div className="flex-2">
+                                <img className="driver" src="https://img.icons8.com/material/50/000000/vanpool.png" alt="driver"/>
+                                </div>
+                            </div>
+                            <div className="button-bottom" style={{ background: `${colours[3][1]}` }}>
+                                <p>More Info <img id="arr-img" src="https://img.icons8.com/material/24/000000/circled-right--v1.png" alt="arr"/></p>
                             </div>
                         </div>
                         )

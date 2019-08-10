@@ -1,9 +1,12 @@
 import React from 'react';
 import './dashboard.sass';
+import { Redirect } from 'react-router-dom';
 
 import Nav from '../hoc/nav/nav';
 import Chart from "react-apexcharts";
 import Button from "../hoc/button/button";
+
+import { IsLoggedIn } from '../../index';
 
 export default class Dashboard extends React.Component{
     constructor(props){
@@ -31,17 +34,21 @@ export default class Dashboard extends React.Component{
         }
       }
     
-      render() {
+      renderFunc = () =>{
         let { options, series} = this.state;
-        return (
+
+        return(
           <div>
-            <Nav />
-            <div className="dashboard">
-                Dashboard
-                <div className="row">
-                    <Button type="Users" />
-                    <Button type="Revenue" />
-                </div>
+          <Nav />
+          <div className="dashboard">
+              Dashboard
+              <div className="row">
+                  <Button type="Users" />
+                  <Button type="InActive" />
+                  <Button type="Trips" />
+                  <Button type="Revenue" />                    
+              </div>
+              <div className="row">
                 <div className="mixed-chart">
                     <Chart
                     options={options}
@@ -58,8 +65,19 @@ export default class Dashboard extends React.Component{
                     width="500"
                     />
                 </div>
-            </div>
+              </div>
           </div>
-        );
+        </div>
+        )
+      }
+      render() {
+        
+        return(
+          <IsLoggedIn.Consumer>
+            {(context) => (
+              (context.state.loggedIn) ? this.renderFunc() : <Redirect to="/"/>
+            )}
+          </IsLoggedIn.Consumer>
+        )
       };
 }

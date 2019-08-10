@@ -41,7 +41,24 @@ export default class Nav extends React.Component {
                     <Link to="/account" className="routes" style={{ margin: '0 10px 0 10px' }}>Account</Link>
                 </div>
                 <div className="side-nav">
-                    hello
+                    <div style={{ display: 'flex', width: '250px', position: 'fixed', bottom: '10px', left: '10px' }}>
+                        <div style={{ width: '70%', marginTop: '-5px' }}>
+                            <p style={{ margin: 0}}>Administrator</p>
+                            <p>
+                                <label>
+                                    <input name="group1" type="radio" checked readOnly/>
+                                    <span>Online</span>
+                                </label>
+                            </p>
+                        </div>
+                        <img
+                            src="https://image.shutterstock.com/image-vector/picture-profile-icon-human-people-260nw-1011304363.jpg"
+                            alt="profile"
+                            className="display"
+                            onClick={this.displayHandle}
+                            style={{ marginBottom: '-20px'}}
+                            />
+                    </div>
                 </div>
             </div>
 
