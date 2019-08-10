@@ -22,7 +22,8 @@ class App extends React.Component{
     tripsByDrivers: {},
     loggedIn: false,
     authenticated: () => this.setState({ loggedIn: true }),
-    loggedOut: () => this.setState({ loggedIn: false })
+    loggedOut: () => this.setState({ loggedIn: false }),
+    errors: {}
   }
 
   componentDidMount(){
@@ -38,7 +39,7 @@ class App extends React.Component{
         this.setState({ tripsByDrivers: res })
       })
       .catch(err => {
-        console.error(err)
+        this.setState({ errors: err })
       })
   }
   

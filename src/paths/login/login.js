@@ -17,7 +17,8 @@ export default class Login extends React.Component{
             password: 'Love123456789',
             type: 'user',
             res: {},
-            auth: false
+            auth: false,
+            err: {}
         }
 
         this.inputHandler = this.inputHandler.bind(this);
@@ -42,13 +43,13 @@ export default class Login extends React.Component{
                     this.setState({ res, auth: true })
                     })
                 .catch(err => {
-                    console.error(err)
+                    this.setState({ err })
                 })
         }
     }
 
     logIn = () =>{
-        let { email, password, auth } = this.state;
+        let { email, password, auth, err } = this.state;
         
         return(
             
@@ -63,9 +64,11 @@ export default class Login extends React.Component{
                         <input value={password} onChange={this.inputHandler} name="password"/>
                     </div>
                     <IsLoggedIn.Consumer>
-                        {(context) => (auth) ? context.state.authenticated() : null}
+                        {(context) =>  (auth) ? context.state.authenticated() : null}
                     </IsLoggedIn.Consumer>
                     <button onClick={this.sumbitHandler} className="myButton">Log In</button>
+                    {(Object.keys(err).length > 0) ? <p style={{ color: 'red' }}>{err}</p> : null}
+                    
                 </div>
         )
     }
