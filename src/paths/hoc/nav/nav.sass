@@ -1,4 +1,7 @@
+@import '../../variables.sass'
+    
 $colour: #00A2D8
+$size: 40px
 
 .nav
     background: $colour
@@ -11,16 +14,16 @@ $colour: #00A2D8
     font-family: 'Roboto', sans-serif
     text-transform: uppercase
     font-weight: 600
-    margin: 12px 10px 0 20px
+    margin: 0 10px 0 20px
 
     &:hover
         text-decoration: none
     
 .display
     border-radius: 50px
-    width: 40px
-    height: 40px
-    margin: 2.5px 20px 0 10px
+    width: $size
+    height: $size
+    margin: -1.8px 20px 0 10px
 
     &:hover
         cursor: pointer
@@ -32,3 +35,22 @@ $colour: #00A2D8
     background: $colour
     border-radius: 0 0 4px 4px
     padding: 10px
+
+.logo
+    width: $size
+    height: $size
+    border-radius: 50px
+    margin-top: -2.8px
+
+.side-nav
+    height: 100%
+    width: $spacing
+    position: fixed
+    background: #636363
+    color: white
+
+.acc-name
+    color: white
+    text-transform: uppercase
+    font-weight: 600
+    margin: 0

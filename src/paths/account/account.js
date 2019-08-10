@@ -9,7 +9,8 @@ export default class Account extends React.Component{
     super(props)
 
     this.state={
-      loggedIn: false
+      loggedIn: false,
+      
     }
   }
 
